@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		5CC9FC532C2A5A240018A35E /* TCAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC522C2A5A240018A35E /* TCAApp.swift */; };
-		5CC9FC552C2A5A240018A35E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC542C2A5A240018A35E /* ContentView.swift */; };
 		5CC9FC572C2A5A260018A35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9FC562C2A5A260018A35E /* Assets.xcassets */; };
 		5CC9FC5A2C2A5A260018A35E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC9FC592C2A5A260018A35E /* Preview Assets.xcassets */; };
 		5CC9FC622C2A5A600018A35E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5CC9FC612C2A5A600018A35E /* ComposableArchitecture */; };
 		5CC9FC642C2A5AB30018A35E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */; };
+		5CC9FC662C2A84B60018A35E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC652C2A84B60018A35E /* CounterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5CC9FC4F2C2A5A240018A35E /* TCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC9FC522C2A5A240018A35E /* TCAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCAApp.swift; sourceTree = "<group>"; };
-		5CC9FC542C2A5A240018A35E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5CC9FC562C2A5A260018A35E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CC9FC592C2A5A260018A35E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeature.swift; sourceTree = "<group>"; };
+		5CC9FC652C2A84B60018A35E /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		5CC9FC692C2A88AE0018A35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +56,11 @@
 		5CC9FC512C2A5A240018A35E /* TCA */ = {
 			isa = PBXGroup;
 			children = (
+				5CC9FC692C2A88AE0018A35E /* Info.plist */,
 				5CC9FC582C2A5A260018A35E /* Preview Content */,
 				5CC9FC562C2A5A260018A35E /* Assets.xcassets */,
 				5CC9FC522C2A5A240018A35E /* TCAApp.swift */,
-				5CC9FC542C2A5A240018A35E /* ContentView.swift */,
+				5CC9FC652C2A84B60018A35E /* CounterView.swift */,
 				5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */,
 			);
 			path = TCA;
@@ -149,8 +151,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC9FC642C2A5AB30018A35E /* CounterFeature.swift in Sources */,
-				5CC9FC552C2A5A240018A35E /* ContentView.swift in Sources */,
 				5CC9FC532C2A5A240018A35E /* TCAApp.swift in Sources */,
+				5CC9FC662C2A84B60018A35E /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +288,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TCA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,6 +317,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"TCA/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TCA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
