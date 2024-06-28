@@ -10,7 +10,6 @@ import XCTest
 
 @testable import TCA
 
-@MainActor
 final class AppFeatureTests: XCTestCase {
     func testIncrementInFirstTab() async {
         let store = TestStore(initialState: AppFeature.State()) {

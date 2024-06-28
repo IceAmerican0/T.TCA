@@ -19,6 +19,7 @@
 		5CC9FC642C2A5AB30018A35E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */; };
 		5CC9FC662C2A84B60018A35E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC652C2A84B60018A35E /* CounterView.swift */; };
 		5CC9FC6F2C2A948C0018A35E /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC6E2C2A948C0018A35E /* NumberFactClient.swift */; };
+		5CFF6D3A2C2E47410043AAB7 /* ContactsFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D392C2E47410043AAB7 /* ContactsFeatureTests.swift */; };
 		5CFF6D3C2C2E7B1A0043AAB7 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3B2C2E7B1A0043AAB7 /* ContactsView.swift */; };
 		5CFF6D3E2C2E7B500043AAB7 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3D2C2E7B500043AAB7 /* AppView.swift */; };
 		5CFF6D402C2E7B810043AAB7 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3F2C2E7B810043AAB7 /* AddContactView.swift */; };
@@ -49,6 +50,7 @@
 		5CC9FC692C2A88AE0018A35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5CC9FC6A2C2A89530018A35E /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
 		5CC9FC6E2C2A948C0018A35E /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
+		5CFF6D392C2E47410043AAB7 /* ContactsFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsFeatureTests.swift; sourceTree = "<group>"; };
 		5CFF6D3B2C2E7B1A0043AAB7 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		5CFF6D3D2C2E7B500043AAB7 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		5CFF6D3F2C2E7B810043AAB7 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		5C5B879D2C2D2EDA006673FD /* TCATests */ = {
 			isa = PBXGroup;
 			children = (
+				5CFF6D392C2E47410043AAB7 /* ContactsFeatureTests.swift */,
 				5CC9FC6A2C2A89530018A35E /* CounterFeatureTests.swift */,
 				5CBCD2992C2BF7AA00665C89 /* AppFeatureTests.swift */,
 			);
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C5B87A52C2D2EED006673FD /* CounterFeatureTests.swift in Sources */,
+				5CFF6D3A2C2E47410043AAB7 /* ContactsFeatureTests.swift in Sources */,
 				5C5B87A62C2D2EED006673FD /* AppFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
