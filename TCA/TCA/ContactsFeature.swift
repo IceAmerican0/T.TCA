@@ -18,38 +18,62 @@ struct Contact: Equatable, Identifiable {
 struct ContactsFeature {
     @ObservableState
     struct State: Equatable {
-        @Presents var addContact: AddContactFeature.State?
         var contacts: IdentifiedArrayOf<Contact> = []
+        @Presents var destination: Destination.State?
     }
     enum Action {
         case addButtonTapped
-        case addContact(PresentationAction<AddContactFeature.Action>)
+        case deleteButtonTapped(id: Contact.ID)
+        case destination(PresentationAction<Destination.Action>)
+        enum Alert: Equatable {
+            case confirmDeletion(id: Contact.ID)
+        }
     }
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .addButtonTapped:
-                state.addContact = AddContactFeature.State(
-                    contact: Contact(id: UUID(), name: "")
+                state.destination = .addContact(
+                    AddContactFeature.State(
+                        contact: Contact(id: UUID(), name: "")
+                    )
                 )
                 return .none
                 
-//            case .addContact(.presented(.delegate(.cancel))):
-//                state.addContact = nil
-//                return .none
-                
-            case let .addContact(.presented(.delegate(.saveContact(contact)))):
+            case let .destination(.presented(.addContact(.delegate(.saveContact(contact))))):
                 state.contacts.append(contact)
-//                state.addContact = nil
                 return .none
                 
-            case .addContact:
+            case let .destination(.presented(.alert(.confirmDeletion(id: id)))):
+                state.contacts.remove(id: id)
+                return .none
+                
+            case .destination:
+                return .none
+                
+            case let .deleteButtonTapped(id: id):
+                state.destination = .alert (
+                    AlertState {
+                        TextState("Are you sure?")
+                    } actions: {
+                        ButtonState(role: .destructive, action: .confirmDeletion(id: id)) {
+                            TextState("Delete")
+                        }
+                    }
+                )
+                                            
                 return .none
             }
         }
-        .ifLet(\.$addContact, action: \.addContact) {
-            AddContactFeature()
-        }
+        .ifLet(\.$destination, action: \.destination)
+    }
+}
+
+extension ContactsFeature {
+    @Reducer(state: .equatable)
+    enum Destination {
+        case addContact(AddContactFeature)
+        case alert(AlertState<ContactsFeature.Action.Alert>)
     }
 }
 
@@ -60,7 +84,16 @@ struct ContactsView: View {
         NavigationStack {
             List {
                 ForEach(store.contacts) { contact in
-                    Text(contact.name)
+                    HStack {
+                        Text(contact.name)
+                        Spacer()
+                        Button {
+                            store.send(.deleteButtonTapped(id: contact.id))
+                        } label: {
+                            Image(systemName: "trash")
+                                .foregroundColor(.red)
+                        }
+                    }
                 }
             }
             .navigationTitle("Contacts")
@@ -75,12 +108,13 @@ struct ContactsView: View {
             }
         }
         .sheet(
-            item: $store.scope(state: \.addContact, action: \.addContact)
+            item: $store.scope(state: \.destination?.addContact, action: \.destination.addContact)
         ) { addContactStore in
             NavigationStack {
                 AddContactView(store: addContactStore)
             }
         }
+        .alert($store.scope(state: \.destination?.alert, action: \.destination.alert))
     }
 }
 
