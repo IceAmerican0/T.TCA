@@ -5,9 +5,7 @@
 //  Created by Khai on 6/27/24.
 //
 
-import Foundation
 import ComposableArchitecture
-import SwiftUI
 
 struct Contact: Equatable, Identifiable {
     let id: UUID
@@ -29,13 +27,14 @@ struct ContactsFeature {
             case confirmDeletion(id: Contact.ID)
         }
     }
+    @Dependency(\.uuid) var uuid
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .addButtonTapped:
                 state.destination = .addContact(
                     AddContactFeature.State(
-                        contact: Contact(id: UUID(), name: "")
+                        contact: Contact(id: self.uuid(), name: "")
                     )
                 )
                 return .none
@@ -77,59 +76,6 @@ extension ContactsFeature {
     }
 }
 
-struct ContactsView: View {
-    @Bindable var store: StoreOf<ContactsFeature>
+extension AlertState where Action == ContactsFeature.Action.Alert {
     
-    var body: some View {
-        NavigationStack {
-            List {
-                ForEach(store.contacts) { contact in
-                    HStack {
-                        Text(contact.name)
-                        Spacer()
-                        Button {
-                            store.send(.deleteButtonTapped(id: contact.id))
-                        } label: {
-                            Image(systemName: "trash")
-                                .foregroundColor(.red)
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Contacts")
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        store.send(.addButtonTapped)
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-        }
-        .sheet(
-            item: $store.scope(state: \.destination?.addContact, action: \.destination.addContact)
-        ) { addContactStore in
-            NavigationStack {
-                AddContactView(store: addContactStore)
-            }
-        }
-        .alert($store.scope(state: \.destination?.alert, action: \.destination.alert))
-    }
-}
-
-#Preview {
-    ContactsView(
-        store: Store(
-            initialState: ContactsFeature.State(
-                contacts: [
-                    Contact(id: UUID(), name: "Blob"),
-                    Contact(id: UUID(), name: "Blob Jr"),
-                    Contact(id: UUID(), name: "Blob Sr")
-                ]
-            )
-        ) {
-            ContactsFeature()
-        }
-    )
 }

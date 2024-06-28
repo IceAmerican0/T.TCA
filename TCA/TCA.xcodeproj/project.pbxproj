@@ -19,6 +19,9 @@
 		5CC9FC642C2A5AB30018A35E /* CounterFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */; };
 		5CC9FC662C2A84B60018A35E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC652C2A84B60018A35E /* CounterView.swift */; };
 		5CC9FC6F2C2A948C0018A35E /* NumberFactClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC9FC6E2C2A948C0018A35E /* NumberFactClient.swift */; };
+		5CFF6D3C2C2E7B1A0043AAB7 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3B2C2E7B1A0043AAB7 /* ContactsView.swift */; };
+		5CFF6D3E2C2E7B500043AAB7 /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3D2C2E7B500043AAB7 /* AppView.swift */; };
+		5CFF6D402C2E7B810043AAB7 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFF6D3F2C2E7B810043AAB7 /* AddContactView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,9 @@
 		5CC9FC692C2A88AE0018A35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5CC9FC6A2C2A89530018A35E /* CounterFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterFeatureTests.swift; sourceTree = "<group>"; };
 		5CC9FC6E2C2A948C0018A35E /* NumberFactClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactClient.swift; sourceTree = "<group>"; };
+		5CFF6D3B2C2E7B1A0043AAB7 /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		5CFF6D3D2C2E7B500043AAB7 /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		5CFF6D3F2C2E7B810043AAB7 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +111,11 @@
 				5CC9FC632C2A5AB30018A35E /* CounterFeature.swift */,
 				5CC9FC6E2C2A948C0018A35E /* NumberFactClient.swift */,
 				5CBCD2952C2BF64000665C89 /* AppFeature.swift */,
+				5CFF6D3D2C2E7B500043AAB7 /* AppView.swift */,
 				5C5B87922C2CF7DC006673FD /* ContactsFeature.swift */,
+				5CFF6D3B2C2E7B1A0043AAB7 /* ContactsView.swift */,
 				5C5B87942C2CFE41006673FD /* AddContactFeature.swift */,
+				5CFF6D3F2C2E7B810043AAB7 /* AddContactView.swift */,
 			);
 			path = TCA;
 			sourceTree = "<group>";
@@ -235,12 +244,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CBCD2962C2BF64000665C89 /* AppFeature.swift in Sources */,
+				5CFF6D402C2E7B810043AAB7 /* AddContactView.swift in Sources */,
 				5CC9FC6F2C2A948C0018A35E /* NumberFactClient.swift in Sources */,
+				5CFF6D3E2C2E7B500043AAB7 /* AppView.swift in Sources */,
 				5CC9FC642C2A5AB30018A35E /* CounterFeature.swift in Sources */,
 				5CC9FC532C2A5A240018A35E /* TCAApp.swift in Sources */,
 				5CC9FC662C2A84B60018A35E /* CounterView.swift in Sources */,
 				5C5B87932C2CF7DC006673FD /* ContactsFeature.swift in Sources */,
 				5C5B87952C2CFE41006673FD /* AddContactFeature.swift in Sources */,
+				5CFF6D3C2C2E7B1A0043AAB7 /* ContactsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
